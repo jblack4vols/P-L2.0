@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #ff8200;
+  --brand-cream: #ffead5;
+  --brand-black: #000000;
+  --brand-grey: #d1d5db;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #f9fafb;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] { -moz-appearance: textfield; }
+
+.tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* Safe area padding for notched phones */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* Smooth scroll on mobile */
+.scroll-touch { -webkit-overflow-scrolling: touch; }
+
+/* Hide scrollbar but keep scroll functionality */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Mobile-friendly input focus */
+@media (max-width: 640px) {
+  input:focus, select:focus { font-size: 16px !important; }
+}
+
+/* Brand accent for focus rings */
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 130, 0, 0.3);
+}

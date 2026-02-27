@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="95" fill="#ff8200"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <!-- Three stars arranged in Tennessee tri-star pattern -->
+  <!-- Top star -->
+  <polygon points="100,35 108,58 132,58 113,72 120,95 100,80 80,95 87,72 68,58 92,58" fill="#ffffff"/>
+  <!-- Bottom-left star -->
+  <polygon points="60,100 68,123 92,123 73,137 80,160 60,145 40,160 47,137 28,123 52,123" fill="#ffffff"/>
+  <!-- Bottom-right star -->
+  <polygon points="140,100 148,123 172,123 153,137 160,160 140,145 120,160 127,137 108,123 132,123" fill="#ffffff"/>
+</svg>
