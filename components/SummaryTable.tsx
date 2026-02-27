@@ -31,7 +31,7 @@ const ROWS: { label: string; key: string; isCurrency: boolean; isMargin?: boolea
 ]
 
 export default function SummaryTable({ analysis }: Props) {
-  const [viewMode, setViewMode] = useState<'table' | 'cards'>('cards')
+  const [viewMode, setViewMode] = useState<'table' | 'cards'>('table')
   if (!analysis) return <p className="text-gray-400 p-8 text-center">Enter data and select months to see analysis.</p>
 
   const { results, totalRev } = analysis

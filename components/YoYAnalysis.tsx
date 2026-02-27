@@ -80,30 +80,8 @@ export default function YoYAnalysis({ userId, year, selectedMonths, currentAnaly
         ))}
       </div>
 
-      {/* Mobile cards */}
-      <div className="sm:hidden space-y-2">
-        {filtered.map((r, i) => (
-          <div key={i} className="bg-white rounded-lg border border-gray-200 p-3">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-medium text-sm">{r.location}</span>
-              <span className="text-xs text-gray-400">{r.metric}</span>
-            </div>
-            <div className="grid grid-cols-3 gap-2 text-xs">
-              <div><span className="text-gray-400">{year - 1}</span><br/><span className="font-medium">{fmtMetric(r.metric, r.prior)}</span></div>
-              <div><span className="text-gray-400">{year}</span><br/><span className="font-medium">{fmtMetric(r.metric, r.current)}</span></div>
-              <div>
-                <span className="text-gray-400">Change</span><br/>
-                <span className={`font-bold ${r.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                  {fmtChange(r.metric, r.change)}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop table */}
-      <div className="hidden sm:block overflow-x-auto">
+      {/* Table view (all screen sizes) */}
+      <div className="overflow-x-auto scroll-touch">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50">

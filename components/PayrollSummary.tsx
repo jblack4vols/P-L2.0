@@ -46,23 +46,8 @@ export default function PayrollSummary({ employees, hours, selectedMonths }: Pro
         </div>
       </div>
 
-      {/* Mobile cards */}
-      <div className="sm:hidden space-y-2">
-        {rows.filter(r => r.totalEmployees > 0).map(r => (
-          <div key={r.location} className="bg-white rounded-lg border border-gray-200 p-3">
-            <div className="font-medium text-sm mb-2">{r.location}</div>
-            <div className="grid grid-cols-2 gap-2 text-xs">
-              <div><span className="text-gray-400">Employees</span><br/><span className="font-medium">{r.totalEmployees}</span></div>
-              <div><span className="text-gray-400">Gross Pay</span><br/><span className="font-medium">{fmt(r.totalGrossPay)}</span></div>
-              <div><span className="text-gray-400">Est. Taxes</span><br/><span className="font-medium">{fmt(r.estimatedTaxes)}</span></div>
-              <div><span className="text-gray-400">Total Cost</span><br/><span className="font-bold text-brand-orange">{fmt(r.totalLaborCost)}</span></div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop table */}
-      <div className="hidden sm:block overflow-x-auto">
+      {/* Table view (all screen sizes) */}
+      <div className="overflow-x-auto scroll-touch">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50">

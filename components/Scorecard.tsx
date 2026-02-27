@@ -31,7 +31,7 @@ function gradeBg(g: string) {
 }
 
 export default function Scorecard({ analysis }: Props) {
-  const [viewMode, setViewMode] = useState<'table' | 'cards'>('cards')
+  const [viewMode, setViewMode] = useState<'table' | 'cards'>('table')
   if (!analysis) return <p className="text-gray-400 p-8 text-center">No data to display.</p>
 
   const { results, rankings, composite, sortedLocs } = analysis

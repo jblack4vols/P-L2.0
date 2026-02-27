@@ -42,30 +42,8 @@ export default function BudgetComparison({ plData, budget, selectedMonths }: Pro
         ))}
       </div>
 
-      {/* Mobile cards */}
-      <div className="sm:hidden space-y-2">
-        {filtered.map((r, i) => (
-          <div key={i} className="bg-white rounded-lg border border-gray-200 p-3">
-            <div className="flex justify-between items-center mb-1">
-              <span className="font-medium text-sm text-gray-800">{r.location}</span>
-              <span className="text-xs text-gray-400">{r.metric}</span>
-            </div>
-            <div className="grid grid-cols-3 gap-2 text-xs">
-              <div><span className="text-gray-400">Budget</span><br/><span className="font-medium">{fmt(r.budget)}</span></div>
-              <div><span className="text-gray-400">Actual</span><br/><span className="font-medium">{fmt(r.actual)}</span></div>
-              <div>
-                <span className="text-gray-400">Variance</span><br/>
-                <span className={`font-bold ${r.metric === 'Revenue' ? (r.variance >= 0 ? 'text-green-600' : 'text-red-600') : (r.variance <= 0 ? 'text-green-600' : 'text-red-600')}`}>
-                  {fmt(r.variance)} ({pct(r.variancePct)})
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop table */}
-      <div className="hidden sm:block overflow-x-auto">
+      {/* Table view (all screen sizes) */}
+      <div className="overflow-x-auto scroll-touch">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50">
